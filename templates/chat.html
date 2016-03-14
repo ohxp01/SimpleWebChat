@@ -31,7 +31,8 @@
                 if (!window["WebSocket"]) {
                     alert("Error no socket support fomr browser")
                 } else {
-                    socket = new WebSocket("ws://localhost:8080/room");
+                debugger;
+                socket = new WebSocket("ws://{{.Host}}/room");
                     socket.onclose = function() {
                         alert("Connection has been closed.")
                     }
