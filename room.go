@@ -1,19 +1,19 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"net/http"
 
+	"github.com/KexinLu/tracer"
 	"github.com/gorilla/websocket"
 )
 
 type room struct {
-	// use a channel forward to hold messages to other clients
 	forward chan []byte
 	join    chan *client
 	leave   chan *client
 	clients map[*client]bool
+	tracer  tracer.Tracer
 }
 
 func newRoom() *room {
@@ -29,20 +29,20 @@ func (r *room) run() {
 	for {
 		select {
 		case client := <-r.join:
-			fmt.Print("client joining \n")
+			r.tracer.Trace("Client joining")
 			//joining
 			r.clients[client] = true
 		case client := <-r.leave:
-			fmt.Print("client leaving \n")
+			// r.tracer.Trace("Client joining")
 			//joining
 			r.clients[client] = false
 		case msg := <-r.forward:
-			fmt.Print("forwarding message \n")
+			// r.tracer.Trace("Client left")
 			for client := range r.clients {
 				select {
 				case client.send <- msg:
-					fmt.Print("sending message \n")
-					//send message
+					// r.tracer.Trace("Sending Message")
+					// send message
 				default:
 					delete(r.clients, client)
 					close(client.send)
