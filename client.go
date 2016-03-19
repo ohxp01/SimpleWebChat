@@ -10,6 +10,10 @@ type client struct {
 	room   *room
 }
 
+func (c *client) init() {
+    c.send = make(chan []byte, 2)
+}
+
 func (c *client) read() {
 	for {
 		if _, msg, err := c.socket.ReadMessage(); err == nil {
