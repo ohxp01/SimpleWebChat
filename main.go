@@ -1,12 +1,15 @@
 package main
 
 import (
+	"flag"
 	"log"
 	"net/http"
+	"os"
 	"path/filepath"
 	"sync"
 	"text/template"
-	"flag"
+
+	"github.com/KexinLu/tracer"
 )
 
 // define templateHandler conform to http.Handler
@@ -25,9 +28,10 @@ func (t *templateHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-    var addr = flag.String("addr", ":8080", "The Address of the Application")
-    flag.Parse()
+	var addr = flag.String("addr", ":8080", "The Address of the Application")
+	flag.Parse()
 	r := newRoom()
+	r.tracer = tracer.New(os.Stdout)
 	http.Handle("/", &templateHandler{filename: "chat.html"})
 	http.Handle("/room", r)
 	go r.run()
