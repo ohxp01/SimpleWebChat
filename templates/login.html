@@ -18,16 +18,19 @@
                          <input type="text" name="username" value="Username" id="username"><br>
                          Room Name:<br>
                          <input type="text" name="roomname" value="SuperSecretRoom" id="roomname"><br><br>
-                         <input type="submit" value="Submit" id="submit">
+                         <!-- <input type="submit" value="Submit" id="submit"> -->
+                         <button id="submit">submit</button>
                      </form>
+                     <script src="/assets/jquery-2.2.2.min.js"></script>
                      <script>
                          $(function() {
-                             var userNameInput = $("#username"),
-                                 roomNameInput = $("#roomname"),
+                             var self = this,
                                  submit = $("#submit") ;
 
-                             submit.onclick(function() {
-                                 if (!userNameInput.val() || !roomnameInput.val()) {
+                             submit.click(function() {
+                                 var userNameInput = $("#username"),
+                                    roomNameInput = $("#roomname");
+                                 if (!userNameInput.val() || !roomNameInput.val()) {
                                      alert("no")
                                  } else {
                                      alert("yes")
