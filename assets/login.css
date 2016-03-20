@@ -1,0 +1,14 @@
+body {
+    background-image: url("/assets/images/background.jpg");
+    background-size: cover;
+    color: white;
+}
+
+.panel {
+        background: rgba(0, 0, 0, 0.2);
+}
+
+#submit {
+    font-size: 120%;
+    color: grey;
+}
