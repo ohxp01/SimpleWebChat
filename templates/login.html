@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" href="/assets/bootstrap-3.3.6-dist/css/bootstrap.min.css">
+    </head>
+    <body>
+         <div class="container">
+             <div class="page-header">
+                 <h1> Sign In </h1>
+             </div>
+             <div class="panel">
+                 <div class="panel-heading">
+                     <h2>Please Sign In</h2>
+                 </div>
+                 <div class="panel-body">
+                     <form action="#" id="login">
+                         User Name:<br>
+                         <input type="text" name="username" value="Username" id="username"><br>
+                         Room Name:<br>
+                         <input type="text" name="roomname" value="SuperSecretRoom" id="roomname"><br><br>
+                         <input type="submit" value="Submit" id="submit">
+                     </form>
+                     <script>
+                         $(function() {
+                             var userNameInput = $("#username"),
+                                 roomNameInput = $("#roomname"),
+                                 submit = $("#submit") ;
+
+                             submit.onclick(function() {
+                                 if (!userNameInput.val() || !roomnameInput.val()) {
+                                     alert("no")
+                                 } else {
+                                     alert("yes")
+                                 }
+                             });
+                         })
+                     </script>
+                 </div>
+             </div>
+         </div>
+    </body>
+</html>

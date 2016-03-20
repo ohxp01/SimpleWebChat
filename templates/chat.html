@@ -1,6 +1,7 @@
 <html>
     <head>
         <title>Chat</title>
+        <link rel="stylesheet" href="/assets/bootstrap-3.3.6-dist/css/bootstrap.min.css">
         <style>
             input { display: block; }
             ul { list-style: none; }
@@ -12,12 +13,13 @@
             <textarea></textarea>
             <input type="submit" value="Send" />
         </form>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="/assets/jquery-2.2.2.min.js"></script>
         <script>
             $(function() {
-                var socket = null;
-                var msgBox = $("#chatbox textarea");
-                var messages = $("#messages");
+                var socket = null,
+                    msgBox = $("#chatbox textarea"),
+                    messages = $("#messages");
+
                 $("#chatbox").submit(function() {
                     if(!msgBox.val()) return false;
                     if(!socket) {
