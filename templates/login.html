@@ -16,9 +16,9 @@
                  <div class="panel-body">
                      <form action="#" id="login">
                          User Name:<br>
-                         <input class="input" type="text" name="username" value="Username" id="username"><br>
+                         <input class="trans-dark" type="text" name="username" value="Username" id="username"><br>
                          Room Name:<br>
-                         <input class="input" type="text" name="roomname" value="SuperSecretRoom" id="roomname"><br><br>
+                         <input class="trans-dark" type="text" name="roomname" value="SuperSecretRoom" id="roomname"><br><br>
                          <!-- <input type="submit" value="Submit" id="submit"> -->
                          <button class="btn-default" id="submit">Submit</button>
                      </form>
@@ -39,6 +39,19 @@
                              });
                          })
                      </script>
+                 </div>
+                 <div class="panel-body trans-dark" id="oauthPanel">
+                     <ul>
+                         <li>
+                             <a class="trans-dark" href="/auth/login/github"> GitHub </a>
+                         </li>
+                         <li>
+                             <a class="trans-dark" href="auth/login/google"> Google </a>
+                         </li>
+                         <li>
+                             <a class="trans-dark" href="/auth/login/facebook"> Facebook </a>
+                         </li>
+                     </ul>
                  </div>
              </div>
          </div>

@@ -18,4 +18,13 @@ body {
         background: rgba(0, 0, 0, 0.2);
 }
 
+.tras-dark {
+    background: rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+a:link {
+    color: white;
+}
+
 
