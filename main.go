@@ -9,7 +9,7 @@ import (
 	"sync"
 	"text/template"
 
-	"github.com/KexinLu/tracer"
+	"tracer"
 )
 
 // define templateHandler conform to http.Handler

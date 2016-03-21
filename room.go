@@ -4,7 +4,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/KexinLu/tracer"
+	"tracer"
 	"github.com/gorilla/websocket"
 )
 
